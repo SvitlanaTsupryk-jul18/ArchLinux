@@ -1,0 +1,182 @@
+$main-color: #c0301c;
+$text-color: #555555;
+$bg-color:#f8f8f8;
+$img-color: rgba(192, 48, 28, 0.7);
+$main-font:'Montserrat',
+sans-serif;
+$text-font: 'Roboto Slab',
+serif;
+%sec-padding {
+    padding: 100px 0;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+@media (max-width:1160px) {
+    .container {
+        padding: 0 20px;
+    }
+}
+
+body {
+    color: $text-color;
+    font-family: $text-font;
+    font-weight: 400;
+    padding-bottom: 285px;
+    scroll-behavior: smooth;
+}
+
+.sctitle {
+    text-transform: uppercase;
+    font-family: $main-font;
+    font-size: 20px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 60px;
+    &:before {
+        position: absolute;
+        content: " ";
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        width: 50px;
+        height: 2px;
+        background-color: $text-color;
+    }
+}
+
+.undertitle {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 3;
+    background-color: $img-color;
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+    padding: 20%;
+    transition: 1s all;
+    opacity: 1;
+    visibility: visible;
+}
+
+.loader {
+    width: 90px;
+    height: 90px;
+    border: 10px solid white;
+    border-radius: 50%;
+    border-top-color: #c0301c;
+    line-height: 60px;
+    color: white;
+    padding: 5px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin 1s infinite;
+}
+
+.done {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#left,
+#right {
+    display: inline-block;
+}
+
+@keyframes spin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    %sec-padding {
+        padding: 50px 0;
+    }
+    body {
+        padding-bottom: 195px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .undertitle {
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 470px) and(min-width: 320px) {
+    %sec-padding {
+        padding: 20px 0;
+    }
+    body {
+        padding-bottom: 135px;
+    }
+    .sctitle {
+        padding-bottom: 30px;
+        &:before {
+            top: 30px;
+        }
+    }
+}
+
+@keyframes rubberBand {
+    from {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+    30% {
+        -webkit-transform: scale3d(1.25, 0.75, 1);
+        transform: scale3d(1.25, 0.75, 1);
+    }
+    40% {
+        -webkit-transform: scale3d(0.75, 1.25, 1);
+        transform: scale3d(0.75, 1.25, 1);
+    }
+    50% {
+        -webkit-transform: scale3d(1.15, 0.85, 1);
+        transform: scale3d(1.15, 0.85, 1);
+    }
+    65% {
+        -webkit-transform: scale3d(0.95, 1.05, 1);
+        transform: scale3d(0.95, 1.05, 1);
+    }
+    75% {
+        -webkit-transform: scale3d(1.05, 0.95, 1);
+        transform: scale3d(1.05, 0.95, 1);
+    }
+    to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+.rubberBand {
+    -webkit-animation-name: rubberBand;
+    animation-name: rubberBand;
+}
