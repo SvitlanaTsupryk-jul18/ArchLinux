@@ -1,5 +1,5 @@
 {
-    "name": "maket",
+    "name": "archlinux",
     "version": "1.0.0",
     "description": "",
     "main": "gulpfile.js",
@@ -8,20 +8,19 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/SvitlanaTsupryk-jul18/Maket.git"
+        "url": "git+https://github.com/SvitlanaTsupryk-jul18/ArchLinux.git"
     },
     "author": "Svet",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/SvitlanaTsupryk-jul18/Maket/issues"
+        "url": "https://github.com/SvitlanaTsupryk-jul18/ArchLinux/issues"
     },
-    "homepage": "https://github.com/SvitlanaTsupryk-jul18/Maket#readme",
+    "homepage": "https://github.com/SvitlanaTsupryk-jul18/ArchLinux#readme",
     "devDependencies": {
         "browser-sync": "^2.26.3",
         "gulp": "^3.9.1",
         "gulp-autoprefixer": "^6.0.0",
-        "gulp-sass": "^4.0.2",
-        "sweetalert2": "^7.29.2"
+        "gulp-sass": "^4.0.2"
     },
     "dependencies": {
         "normalize.css": "^8.0.1"
