@@ -17,7 +17,7 @@
 
         function changeScreen(e) {
             currentscreen === 2 ? (currentscreen = 0) : (currentscreen += 1);
-            console.log(currentscreen);
+
             screens.forEach((block, index) => {
                 if (index === currentscreen) {
                     block.classList.add("show");

@@ -465,6 +465,7 @@ h1 {
 
     .type {
         width: 770px;
+        height: 100%;
 
         &__sites {
             height: 100%;
@@ -492,6 +493,11 @@ h1 {
             margin-right: 0;
         }
     }
+
+    .btn {
+        border: 2px solid white;
+    }
+
 }
 
 @media only screen and (max-width: 1170px) {
@@ -513,10 +519,6 @@ h1 {
 @media only screen and (max-width: 991px) and (min-width: 769px) {
     .left-screen {
         padding: 0 40px;
-    }
-
-    .btn {
-        border: 2px solid white;
     }
 
     .type {
