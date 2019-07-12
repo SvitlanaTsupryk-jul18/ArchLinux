@@ -2,6 +2,12 @@
     // invocation
 
     Scrolling();
+    ChoosePrice();
+
+
+
+
+    //////function for moving left after scroll
 
     function Scrolling() {
         let screens = document.querySelectorAll(".screen");
@@ -45,25 +51,40 @@
                 }, delay)
             }
         }
-
-
     }
 
+    /////// choosing the price of site type
 
+    function ChoosePrice() {
+        let sites = document.querySelectorAll(".site");
+        let price = document.querySelector(".price");
 
+        sites.forEach((site) => {
+            site.addEventListener("click", (event) => {
+                if (!event.target.dataset) return;
+                price.innerHTML = event.target.dataset.value;
+            });
+        });
+    }
 
-    //////preloader
+    function Tabs() {
+        var works = document.querySelector(".works");
+        var tab = works.querySelectorAll('[data-item]');
+        var cont = works.querySelector('.works__content');
+        var tabLength = tab.length;
+        var tabcontent = cont.querySelectorAll('.works__tabcontent');
+        tab.forEach(() => {
+            tab[i].addEventListener("click", show);
+        });
 
-    function Preloader() {
-        document.body.onload = function () {
-            setTimeout(function () {
-                var preloader = document.querySelector(".preloader");
-                if (!preloader.classList.contains('done')) {
-                    preloader.classList.add('done');
-                }
-            }, 1000)
-        }
-    };
+        function show() {
+            tabcontent.forEach(function (item, i, arr) {
+                tabcontent[i].classList.remove("show");
+            });
+            var c = 'data-item =' + '"' + this.dataset.item + '"';
+            cont.querySelector("[" + c + "]").classList.add("show");
+        };
+    }
 
 
     //////// validation form 
@@ -161,93 +182,6 @@
         }
     }
 
-    ///burger-menu
-
-    function burger() {
-        let menu = document.querySelector(".mob-menu");
-        let openbtn = document.querySelector(".js-burger-open");
-        let closebtn = document.querySelector(".js-burger-close");
-
-        openbtn.addEventListener("click", show);
-        closebtn.addEventListener("click", hide);
-
-        function show() {
-            this.classList.remove("burger--visibility");
-            menu.style.transform = ("translate(0)");
-        }
-
-        function hide() {
-            openbtn.classList.add("burger--visibility");
-            menu.style.transform = ("translate(500%)");
-        }
-
-
-    }
-    //////buttons modal
-
-    function modal() {
-        let modalbtn = document.querySelector(".wellcome__btn");
-        let modalbtnPro = document.querySelector(".project__btn");
-
-        modalbtn.addEventListener("click", function () {
-            swal({
-                title: 'Hello! my Friend',
-                width: 600,
-                padding: '3em',
-                background: 'white',
-                confirmButtonColor: "#c0301c",
-                //swal.getContent ()
-                customClass: 'animated rubberBand'
-            });
-        });
-        modalbtnPro.addEventListener("click", function () {
-            swal({
-                title: 'Let\'s talk about YOUR PROJECT!',
-                type: "success",
-                width: 600,
-                padding: '3em',
-                background: 'white',
-                confirmButtonColor: "#c0301c",
-                confirmButtonText: "Good choice!",
-                showCancelButton: true,
-                cancelButtonText: "Later",
-            })
-        })
-    }
-
-    ////smoothScroll
-
-    function smoothScrollLinks() {
-        let nav = document.querySelector(".nav")
-        nav.querySelectorAll('a[href^="#"]').forEach(link => {
-            link.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    }
-
-    /// button to top
-
-    function toTop() {
-        var buttonTop = document.querySelector("#btn-up");
-        window.onscroll = function () {
-            if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
-                buttonTop.style.opacity = "1";
-            } else {
-                buttonTop.style.opacity = "0";
-            }
-        }
-
-        buttonTop.addEventListener("click", function (e) {
-            e.preventDefault();
-            document.querySelector(".hero").scrollIntoView({
-                behavior: 'smooth'
-            });
-        })
-    }
 
     /////Gsap
 
