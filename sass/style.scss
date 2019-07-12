@@ -95,6 +95,7 @@ h1 {
 
 .left-screen {
     padding: 0 100px;
+    width: calc(100% - 400px);
 
     &__text {
         font-size: 24px;
@@ -105,7 +106,28 @@ h1 {
         margin-top: 40px;
         padding: 22px 50px;
     }
+
+    &__phone {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        justify-content: space-around;
+        width: 100%;
+        padding: 20px;
+    }
+
+    &__input {
+        width: 300px;
+        height: 60px;
+        border-radius: 30.5px;
+        border: solid 1px #dcdcdc;
+        font-size: 21px;
+        font-weight: 400;
+        padding-left: 10px;
+        // background-color: #dcdcdc;
+    }
 }
+
 
 .rigth-screen {
     width: 370px;
@@ -347,7 +369,7 @@ h1 {
         height: 86px;
         width: 86px;
         margin: 30px;
-        transition: all .3s ease-in;
+        transition: all .2s ease-in;
     }
 
     &__name {
@@ -470,6 +492,7 @@ h1 {
     .left-screen {
         width: calc(100vw - 330px);
     }
+
 }
 
 @media only screen and (max-width: 991px) and (min-width: 769px) {
@@ -554,7 +577,7 @@ h1 {
         font-size: 36px;
     }
 
-    .type .header__logo {
+    .header__logo {
         padding-top: 0px;
     }
 

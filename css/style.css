@@ -74,13 +74,29 @@ h1 {
   align-items: flex-start; }
 
 .left-screen {
-  padding: 0 100px; }
+  padding: 0 100px;
+  width: calc(100% - 400px); }
   .left-screen__text {
     font-size: 24px;
     font-weight: 500; }
   .left-screen__btn {
     margin-top: 40px;
     padding: 22px 50px; }
+  .left-screen__phone {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-around;
+    width: 100%;
+    padding: 20px; }
+  .left-screen__input {
+    width: 300px;
+    height: 60px;
+    border-radius: 30.5px;
+    border: solid 1px #dcdcdc;
+    font-size: 21px;
+    font-weight: 400;
+    padding-left: 10px; }
 
 .rigth-screen {
   width: 370px;
@@ -249,7 +265,7 @@ h1 {
     height: 86px;
     width: 86px;
     margin: 30px;
-    transition: all .3s ease-in; }
+    transition: all .2s ease-in; }
   .site__name {
     font-size: 19px;
     font-weight: bold;
@@ -370,7 +386,7 @@ h1 {
       font-size: 20px; }
   h1 {
     font-size: 36px; }
-  .type .header__logo {
+  .header__logo {
     padding-top: 0px; }
   .site {
     background-image: none;
