@@ -28,8 +28,6 @@
                     block.classList.add("prevslide");
                 } else block.classList.remove("show", "prevslide");
             });
-
-            // alert("kdfhghg");
         };
 
         document.addEventListener("touchmove", handleWeel);
