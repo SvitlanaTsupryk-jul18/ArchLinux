@@ -1,15 +1,56 @@
 (function () {
     // invocation
-    Preloader();
-    sliderAbout();
-    Tabs();
-    jsForm();
-    burger();
-    modal();
-    smoothScrollLinks();
-    toTop();
-    Tween();
-    scrollMagic();
+
+    Scrolling();
+
+    function Scrolling() {
+        let screens = document.querySelectorAll(".screen");
+        let currentscreen = 0;
+        const wrappedFast = debounce(changeScreen, 500);
+
+        document.addEventListener("mousewheel", wrappedFast);
+
+        function changeScreen(e) {
+            currentscreen === 2 ? (currentscreen = 0) : (currentscreen += 1);
+            console.log(currentscreen);
+            screens.forEach((block, index) => {
+                if (index === currentscreen) {
+                    block.classList.add("show");
+                } else if (index === currentscreen - 1) {
+                    block.classList.remove("show");
+                    block.classList.add("prevslide");
+                } else if (index === 2 && currentscreen === 0) {
+                    block.classList.add("prevslide");
+                } else block.classList.remove("show", "prevslide");
+            });
+
+            // alert("kdfhghg");
+        };
+
+        document.addEventListener("touchmove", handleWeel);
+
+        function handleWeel() {
+            var event1 = document.createEvent("Event");
+            event1.initEvent("mousewheel", false, true);
+            document.dispatchEvent(event1);
+        }
+
+
+        function debounce(f, delay) {
+            let timer = null;
+            return function (...args) {
+                clearTimeout(timer);
+                timer = setTimeout(() => {
+                    f.call(this, ...args);
+                }, delay)
+            }
+        }
+
+
+    }
+
+
+
 
     //////preloader
 
@@ -24,76 +65,6 @@
         }
     };
 
-    ////////// slider in about
-
-    function sliderAbout() {
-        var slwrapper = document.querySelector(".about__slider");
-        var slider = slwrapper.querySelector(".slider");
-        var prev = slwrapper.querySelector(".prev");
-        var next = slwrapper.querySelector(".next");
-        var slide = slider.querySelector(".slider__inner").offsetWidth;
-
-        var sdvig = 0;
-        slwrapper.addEventListener("click", function (event) {
-            if (event.target == next) {
-                sdvig -= slide;
-                if (sdvig < -slide * 4) {
-                    sdvig = 0;
-                }
-            } else if (event.target == prev) {
-                if (sdvig != 0) {
-                    sdvig += slide;
-                }
-            }
-            slider.style.transform = 'translate(' + sdvig + 'px)';
-            console.log(sdvig);
-        });
-    }
-
-    /////////tabs in works
-
-    function Tabs() {
-        var works = document.querySelector(".works");
-        var tab = works.querySelectorAll('[data-item]');
-        var cont = works.querySelector('.works__content');
-        var tabLength = tab.length;
-        var tabcontent = cont.querySelectorAll('.works__tabcontent');
-        tab.forEach(function (item, i, arr) {
-            tab[i].addEventListener("click", show);
-        });
-
-        function show() {
-            tabcontent.forEach(function (item, i, arr) {
-                tabcontent[i].classList.remove("show");
-            });
-            var c = 'data-item =' + '"' + this.dataset.item + '"';
-            cont.querySelector("[" + c + "]").classList.add("show");
-        };
-    }
-
-    ////////slider in clients
-
-    var slideIndex = 0;
-    showSlides();
-
-    function showSlides() {
-        var i;
-        var slides = document.getElementsByClassName("clients__slide");
-        var dots = document.getElementsByClassName("clients__dot");
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {
-            slideIndex = 1
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" js-active", "");
-        }
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " js-active";
-        setTimeout(showSlides, 2500); // Change image every 2 seconds
-    }
 
     //////// validation form 
 
