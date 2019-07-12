@@ -160,10 +160,12 @@
                     <h1>Стоимость вашего проекта от <span class="price">8888</span>$</h1>
                     <p class="left-screen__text">Оставить заявку на точный расчет:
                     </p>
-                    <div class="left-screen__phone">
-                        <input class="left-screen__input" placeholder="+38 (0..)">
-                        <button type="button" class="left-screen__btn btn">Заказать</button>
-                    </div>
+                    <form class="left-screen__phone js-form">
+                        <input class="left-screen__input js-input" type="tel" placeholder="+38 (0..)"
+                            aria-label="enter your phone" required=""
+                            pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im">
+                        <button type="submit" class="left-screen__btn btn send-btn">Заказать</button>
+                    </form>
                 </div>
             </section>
             <section class="rigth-screen">

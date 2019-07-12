@@ -96,7 +96,18 @@ h1 {
     border: solid 1px #dcdcdc;
     font-size: 21px;
     font-weight: 400;
-    padding-left: 10px; }
+    padding-left: 10px;
+    outline: none;
+    transition: all .3s;
+    margin-right: 5px; }
+    .left-screen__input:hover, .left-screen__input:focus {
+      background-color: rgba(115, 88, 251, 0.2); }
+
+.error {
+  background-color: #d59fbf; }
+
+.sent {
+  background-color: #dcdcdc; }
 
 .rigth-screen {
   width: 370px;
