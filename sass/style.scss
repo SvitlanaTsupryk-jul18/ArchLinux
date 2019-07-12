@@ -64,13 +64,14 @@ h1 {
 .screen {
     position: absolute;
     top: 0;
-    left: 0;
-    transform: translateX(100%);
+    left: 50%;
+    transform: translateX(200%);
     font-size: 50px;
     display: flex;
     max-width: 1170px;
     margin: 40px auto;
     height: calc(100vh - 80px);
+    width: 100%;
 }
 
 .block {
@@ -118,7 +119,8 @@ h1 {
     &__btn {
         font-size: 31px;
         font-weight: normal;
-        padding: 40px 80px;
+        padding: 40px 0;
+        width: 100%;
         background-color: $violetColor;
         color: #ffffff;
         border: none;
@@ -157,6 +159,10 @@ h1 {
         letter-spacing: 3.5px;
         padding: 55px 0;
     }
+
+    &:hover .circle {
+        animation: rotate 3s linear infinite;
+    }
 }
 
 .photo {
@@ -174,10 +180,6 @@ h1 {
         background-image: url(../images/man.png);
         background-size: cover;
         height: 100%;
-    }
-
-    &:hover .circle {
-        animation: rotate 3s linear infinite;
     }
 }
 
@@ -379,13 +381,13 @@ h1 {
 }
 
 .show {
-    transform: translateX(0);
+    transform: translateX(-50%);
     z-index: 1;
     transition: all 1s;
 }
 
 .prevslide {
-    transform: translateX(-100%);
+    transform: translateX(-200%);
     z-index: 1;
     transition: all 1s;
 }
@@ -410,7 +412,7 @@ h1 {
 
     .rigth-screen {
         &__btn {
-            padding: 20px 80px;
+            padding: 20px 0;
             font-size: 24px;
         }
 
@@ -425,8 +427,11 @@ h1 {
     }
 
     .type {
-        width: 65%;
-        height: 100%;
+        width: 770px;
+
+        &__sites {
+            height: 100%;
+        }
 
         &__text {
             font-size: 32px;
@@ -452,7 +457,22 @@ h1 {
     }
 }
 
-@media only screen and (max-width: 992px) and (min-width: 769px) {
+@media only screen and (max-width: 1170px) {
+    .type {
+        width: 570px;
+        height: 100%;
+    }
+
+    .rigth-screen {
+        width: 300px;
+    }
+
+    .left-screen {
+        width: calc(100vw - 330px);
+    }
+}
+
+@media only screen and (max-width: 991px) and (min-width: 769px) {
     .left-screen {
         padding: 0 40px;
     }
@@ -462,6 +482,8 @@ h1 {
     }
 
     .type {
+        width: calc(100vw - 330px);
+
         &__header {
             padding: 20px;
         }
@@ -472,16 +494,26 @@ h1 {
         justify-content: space-around;
 
         &__icon {
-            margin: 20px;
+            margin: 10px;
+            width: 48px;
+            height: 48px;
         }
 
         &__name {
             margin-right: 20px;
         }
     }
+
+    h1 {
+        font-size: 36px;
+    }
 }
 
 @media only screen and (max-width: 768px) {
+    .screen {
+        margin: 20px 0;
+    }
+
     .rigth-screen {
         display: none;
     }
@@ -491,15 +523,21 @@ h1 {
     }
 
     .left-screen {
-        margin: 0 auto;
+        width: 100vw;
+        margin-right: 0;
     }
 
     .type {
-        width: 100%;
+        width: 100vw;
+        margin-right: 0;
 
         &__header {
             padding: 20px;
         }
+    }
+
+    h1 {
+        font-size: 36px;
     }
 }
 
@@ -514,6 +552,10 @@ h1 {
 
     h1 {
         font-size: 36px;
+    }
+
+    .type .header__logo {
+        padding-top: 0px;
     }
 
     .site {
