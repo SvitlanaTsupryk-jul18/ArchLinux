@@ -163,6 +163,8 @@ h1 {
         border: none;
         cursor: pointer;
         transition: all .3s;
+        outline: none;
+        display: block;
 
         &:hover {
             border-radius: 50px;
@@ -372,6 +374,7 @@ h1 {
     margin: 30px 30px 0 0;
     opacity: .7;
     transition: all .3s ease-in;
+    cursor: pointer;
 
     &:nth-child(even) {
         margin-right: 0;
